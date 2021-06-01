@@ -6,13 +6,13 @@ import entities.Users;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
     Connection conn = null;
     PreparedStatement ps = null;
+
 
     public int addUser(String username, String password, String email, String fullName, String phone, String img) {
         int result = 0;
@@ -101,7 +101,7 @@ public class UserDAO {
 
     public List<Users> searchUser(String keyword) {
         List<Users> list = new ArrayList<>();
-        ResultSet resultSet = DBConnection.querySet("SELECT * FROM `user` WHERE ? IN (username, email, phone, fullname)", keyword);
+        ResultSet resultSet = DBConnection.querySet("SELECT * FROM `user` WHERE (username LIKE ?) OR (email LIKE ?)", "%" + keyword + "%" ,"%" + keyword + "%");
         if (resultSet != null) {
             try {
                 while (resultSet.next()) {
@@ -119,7 +119,7 @@ public class UserDAO {
                 e.printStackTrace();
             }
         }
-        return null;
+        return list;
     }
 
     public int editUserById(int userID, String username, String password, String email, String fullName, String phone, String img) {
@@ -158,11 +158,14 @@ public class UserDAO {
 
     public static void main(String[] args) {
         UserDAO dao = new UserDAO();
-        List<Users> list = dao.getAllUser();
+        Users a = dao.login("a","a");
+        System.out.println(a.getFullName()+"|"+a.getPassword());
+
+        /* List<Users> list = dao.searchUser("gennike");
         for (Users o : list) {
             System.out.println(o.getFullName());
         }
-
+    */
     }
 
 }
