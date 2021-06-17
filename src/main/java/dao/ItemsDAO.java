@@ -121,12 +121,12 @@ public class ItemsDAO {
         try {
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setDouble(1, price);
+            ps.setString(1,price);
             ps.setString(2, name);
             ps.setString(3, image);
             ps.setString(4, description);
-            ps.setInt(5, categoryID);
-            ps.setInt(6, id);
+            ps.setString(5, categoryID);
+            ps.setString(6, id);
             ps.executeUpdate();
         } catch (Exception e) {
         }

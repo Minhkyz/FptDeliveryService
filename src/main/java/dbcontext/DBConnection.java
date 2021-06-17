@@ -13,12 +13,24 @@ public class DBConnection {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "minhky123";
 
+    /**
+     * get Connection
+     * @return
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         String url = "jdbc:mysql://" + HOST + ':' + PORT + '/' + DBNAME + "?useSSL=false&serverTimezone=UTC";
         return DriverManager.getConnection(url, USERNAME, PASSWORD);
     }
 
+    /**
+     * querySet
+     * @param query
+     * @param values
+     * @return
+     */
     public static ResultSet querySet(String query, Object... values) {
         try {
             Connection connection = getConnection();
@@ -33,13 +45,4 @@ public class DBConnection {
         }
     }
 
-    public static void main(String[] args) {
-
-        try {
-            String query = "select * from user";
-            ResultSet resultSet = querySet(query);
-            System.out.println(getConnection());
-        } catch (Exception e) {
-        }
-    }
 }

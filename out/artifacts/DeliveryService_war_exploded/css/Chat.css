@@ -1,0 +1,434 @@
+
+body {
+    -webkit-animation: bg-pan-bottom 30s both;
+    animation: bg-pan-bottom 30s both;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    background: #62748F;
+}
+
+@-webkit-keyframes bg-pan-bottom {
+    0% {
+        background-color: rgb(181, 247, 175);
+        background-position: 50% 0%;
+    }
+
+    50% {
+        background-position: 50% 50%;
+        background-color: rgb(241, 255, 177);
+    }
+    100% {
+        background-position: 50% 100%;
+        background-color: rgb(181, 247, 175);
+    }
+}
+
+@keyframes bg-pan-bottom {
+    0% {
+        background-position: 50% 0%;
+        background-color: rgb(181, 247, 175);
+    }
+
+    50% {
+        background-position: 50% 50%;
+        background-color: rgb(241, 255, 177);
+    }
+    100% {
+        background-position: 50% 100%;
+        background-color: rgb(181, 247, 175);
+    }
+}
+.col-sm-10 {
+    background-color: white;
+    border-radius: 15px;
+}
+
+/* searchbar*/
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.search_input {
+    color: rgb(8, 1, 1);
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 60px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover {
+    background-color: #d4d4d4;
+}
+
+.searchbar:hover>.search_input {
+    padding: 0 10px;
+    width: 350px;
+    caret-color: rgb(230, 121, 121);
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover>.search_icon {
+    background: rgb(214, 213, 213);
+    color: #000000;
+}
+
+.search_icon {
+    height: 60px;
+    width: 60px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35%;
+    background: rgb(214, 213, 213);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+/* cary icon*/
+.cart_icon {
+    height: 60px;
+    width: 60px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35%;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+/* logo web*/
+.img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+
+}
+/* button homepage setting aboutme.....*/
+.btn:hover {
+    background-color: rgb(248, 113, 147) !important;
+}
+
+.btn:hover>#icon {
+
+    background-color: rgb(236, 96, 131) !important;
+}
+
+.menu:hover>.btn {
+    background-color: rgb(162, 250, 162) !important;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 30px;
+}
+/* web name*/
+h1 {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(117, 36, 6);
+}
+/* text in button*/
+h4 {
+    padding-top: 15px;
+    text-align: center;
+}
+
+
+.anhdahong button {
+    background-color: rgb(248, 113, 147) !important;
+}
+
+.col-sm-2 form button {
+    border-radius: 30px;
+    padding: 5px;
+    background-color: rgb(230, 233, 255) !important;
+    text-align: center;
+    background-color: white;
+}
+
+#hong {
+    background-color: rgb(248, 113, 147) !important;
+}
+/* icon in button*/
+#icon-a {
+    height: 60px;
+    width: 60px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35%;
+    background: rgb(236, 96, 131);
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+}
+
+#icon {
+    height: 60px;
+    width: 60px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35%;
+    background: rgb(255, 255, 255);
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+}
+
+
+.card {
+    background: #fff;
+    border: 0;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+}
+.chat-app .people-list {
+    width:280px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 20px;
+
+}
+
+.chat-app .chat {
+    margin-left: 280px;
+    border-left: 1px solid #eaeaea
+}
+
+.people-list {
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s
+}
+
+.people-list .chat-list li {
+    padding: 10px 15px;
+    list-style: none;
+    border-radius: 3px
+}
+
+.people-list .chat-list li:hover {
+    background: #efefef;
+    cursor: pointer
+}
+
+.people-list .chat-list li.active {
+    background: #efefef
+}
+
+.people-list .chat-list li .name {
+    font-size: 15px
+}
+
+.people-list .chat-list img {
+    width: 45px;
+    border-radius: 50%
+}
+
+.people-list img {
+    float: left;
+    border-radius: 50%
+}
+
+.people-list .about {
+    float: left;
+    padding-left: 8px
+}
+
+.people-list .status {
+    color: #999;
+    font-size: 13px
+}
+
+.chat .chat-header {
+    padding: 15px 20px;
+    border-bottom: 2px solid #f4f7f6
+}
+
+.chat .chat-header img {
+    float: left;
+    border-radius: 40px;
+    width: 40px
+}
+
+.chat .chat-header .chat-about {
+    float: left;
+    padding-left: 10px
+}
+
+.chat .chat-history {
+    padding: 20px;
+    border-bottom: 2px solid #fff
+}
+
+.chat .chat-history ul {
+    padding: 0
+}
+
+.chat .chat-history ul li {
+    list-style: none;
+    margin-bottom: 30px
+}
+
+.chat .chat-history ul li:last-child {
+    margin-bottom: 0px
+}
+
+.chat .chat-history .message-data {
+    margin-bottom: 15px
+}
+
+.chat .chat-history .message-data img {
+    border-radius: 40px;
+    width: 40px
+}
+
+.chat .chat-history .message-data-time {
+    color: #434651;
+    padding-left: 6px
+}
+
+.chat .chat-history .message {
+    color: #444;
+    padding: 18px 20px;
+    line-height: 26px;
+    font-size: 16px;
+    border-radius: 7px;
+    display: inline-block;
+    position: relative
+}
+
+.chat .chat-history .message:after {
+    bottom: 100%;
+    left: 7%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: #fff;
+    border-width: 10px;
+    margin-left: -10px
+}
+
+.chat .chat-history .my-message {
+    background: #efefef
+}
+
+.chat .chat-history .my-message:after {
+    bottom: 100%;
+    left: 30px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: #efefef;
+    border-width: 10px;
+    margin-left: -10px
+}
+
+.chat .chat-history .other-message {
+    background: #e8f1f3;
+    text-align: right
+}
+
+.chat .chat-history .other-message:after {
+    border-bottom-color: #e8f1f3;
+    left: 93%
+}
+
+.chat .chat-message {
+    padding: 20px
+}
+
+.online,
+.offline,
+.me {
+    margin-right: 2px;
+    font-size: 8px;
+    vertical-align: middle
+}
+
+.online {
+    color: #86c541
+}
+
+.offline {
+    color: #e47297
+}
+
+.me {
+    color: #1d8ecd
+}
+
+.float-right {
+    float: right
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0
+}
+
+@media only screen and (max-width: 767px) {
+    .chat-app .people-list {
+        height: 465px;
+        width: 100%;
+        overflow-x: auto;
+        background: #fff;
+        left: -400px;
+        display: none
+    }
+    .chat-app .people-list.open {
+        left: 0
+    }
+    .chat-app .chat {
+        margin: 0
+    }
+    .chat-app .chat .chat-header {
+        border-radius: 0.55rem 0.55rem 0 0
+    }
+    .chat-app .chat-history {
+        height: 300px;
+        overflow-x: auto
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .chat-app .chat-list {
+        height: 650px;
+        overflow-x: auto
+    }
+    .chat-app .chat-history {
+        height: 600px;
+        overflow-x: auto
+    }
+}
+
+
+.chat-app .chat-history {
+    height: calc(100vh - 350px);
+    overflow-x: auto
+}
