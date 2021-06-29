@@ -21,12 +21,13 @@ public class CategoryControl extends HttpServlet {
 
         List<Items> list = dao.getItemsByCID(cateID);
 
-          List<Category> listC = dao.getAllCategory();
+        List<Category> listC = dao.getAllCategory();
 
           Items last = dao.getLast();
 
         request.setAttribute("listP", list);
-        request.setAttribute("listCC", listC);request.setAttribute("last", last);
+        request.setAttribute("listCC", listC);
+        request.setAttribute("last", last);
         request.setAttribute("tag", cateID);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
