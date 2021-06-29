@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="my-3"><input type="submit" value="Login" class="btn btn-primary"></div>
                                     <div class="mb-3"><span class="text-light-white">Don't have an account?</span> <a
-                                            href="#">Sign Up</a></div>
+                                            href="dangky.jsp">Sign Up</a></div>
                                 </form>
 
                             </div>
