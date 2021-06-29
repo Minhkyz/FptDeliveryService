@@ -10,7 +10,6 @@ class UserDAOTest {
 
     @BeforeEach
     void setUp() {
-
     }
 
     @AfterEach

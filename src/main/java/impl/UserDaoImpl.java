@@ -1,8 +1,10 @@
-package dao;
+package impl;
 
+import dao.UserDAO;
 import dbcontext.DBConnection;
 import entities.Users;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,12 +12,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO {
+public class UserDaoImpl implements UserDAO {
     Connection conn = null;
     PreparedStatement ps = null;
 
     /**
      * Function Add User
+     *
      * @param username
      * @param password
      * @param email
@@ -23,7 +26,8 @@ public class UserDAO {
      * @param phone
      * @return
      */
-    public int addUser(String username, String password, String email, String fullName, String phone) {
+    @Override
+    public int add(String username, String password, String email, String fullName, String phone) {
         int result = 0;
         String query = "INSERT INTO `user` (`username`, `password`, `email`, `fullname`, `phone`, `img`) VALUES (?, ?, ?, ?, ?, '')";
         try {
@@ -43,10 +47,12 @@ public class UserDAO {
 
     /**
      * Function login
+     *
      * @param username
      * @param password
      * @return
      */
+    @Override
     public Users login(String username, String password) {
         ResultSet resultSet = DBConnection.querySet("SELECT * FROM `user` WHERE ? IN (username, email) AND `password` = ?", username, password);
         if (resultSet != null) {
@@ -71,8 +77,10 @@ public class UserDAO {
 
     /**
      * Function get list user
+     *
      * @return
      */
+    @Override
     public List<Users> getAllUser() {
         List<Users> list = new ArrayList<>();
         ResultSet resultSet = DBConnection.querySet("select * from user");
@@ -91,17 +99,19 @@ public class UserDAO {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-            }   
+            }
         }
         return list;
     }
 
     /**
      * Check User Exist Username
+     *
      * @param temp
      * @return
      */
-    public Users checkUserExistUsername(String temp){
+    @Override
+    public Users checkUserExistUsername(String temp) {
         ResultSet resultSet = DBConnection.querySet("SELECT * FROM `user` WHERE ? IN (username)", temp);
         if (resultSet != null) {
             try {
@@ -125,10 +135,12 @@ public class UserDAO {
 
     /**
      * Check User Exist Email
+     *
      * @param temp
      * @return
      */
-    public Users checkUserExistEmail(String temp){
+    @Override
+    public Users checkUserExistEmail(String temp) {
         ResultSet resultSet = DBConnection.querySet("SELECT * FROM `user` WHERE ? IN (email)", temp);
         if (resultSet != null) {
             try {
@@ -152,10 +164,12 @@ public class UserDAO {
 
     /**
      * Check User Exist Phone
+     *
      * @param temp
      * @return
      */
-    public Users checkUserExistPhone(String temp){
+    @Override
+    public Users checkUserExistPhone(String temp) {
         ResultSet resultSet = DBConnection.querySet("SELECT * FROM `user` WHERE ? IN (phone)", temp);
         if (resultSet != null) {
             try {
@@ -176,13 +190,38 @@ public class UserDAO {
         }
         return null;
     }
+
     /**
      * Function get User by ID
+     *
      * @param id
      * @return
      */
+    @Override
     public Users getUserById(int id) {
         ResultSet resultSet = DBConnection.querySet("select * from user where id = ?", id);
+        if (resultSet != null) {
+            try {
+                while (resultSet.next()) {
+                    return new Users(
+                            resultSet.getInt(1),
+                            resultSet.getString(2),
+                            resultSet.getString(3),
+                            resultSet.getString(4),
+                            resultSet.getString(5),
+                            resultSet.getString(6),
+                            resultSet.getString(7)
+                    );
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+    @Override
+    public Users getUserByEmail(String email) {
+        ResultSet resultSet = DBConnection.querySet("select * from user where email = ?", email);
         if (resultSet != null) {
             try {
                 while (resultSet.next()) {
@@ -205,12 +244,14 @@ public class UserDAO {
 
     /**
      * Function search user by Email, Username
+     *
      * @param keyword
      * @return
      */
+    @Override
     public List<Users> searchUser(String keyword) {
         List<Users> list = new ArrayList<>();
-        ResultSet resultSet = DBConnection.querySet("SELECT * FROM `user` WHERE (username LIKE ?) OR (email LIKE ?)", "%" + keyword + "%" ,"%" + keyword + "%");
+        ResultSet resultSet = DBConnection.querySet("SELECT * FROM `user` WHERE (username LIKE ?) OR (email LIKE ?)", "%" + keyword + "%", "%" + keyword + "%");
         if (resultSet != null) {
             try {
                 while (resultSet.next()) {
@@ -233,6 +274,7 @@ public class UserDAO {
 
     /**
      * Function edit user by ID
+     *
      * @param userID
      * @param username
      * @param password
@@ -242,6 +284,7 @@ public class UserDAO {
      * @param img
      * @return
      */
+    @Override
     public int editUserById(String userID, String username, String password, String email, String fullName, String phone, String img) {
         int result = 0;
         String query = "UPDATE `user` SET username = ?, password = ?, email = ?, fullname = ?, phone = ?, img = ? WHERE `user`.`id` = ?";
@@ -254,7 +297,7 @@ public class UserDAO {
             ps.setString(4, fullName);
             ps.setString(5, phone);
             ps.setString(6, img);
-            ps.setInt(7, userID);
+            ps.setString(7, userID);
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -264,16 +307,18 @@ public class UserDAO {
 
     /**
      * Function delete User by ID
+     *
      * @param id
      * @return
      */
+    @Override
     public int deleteUserById(String id) {
         int result = 0;
         String query = "DELETE FROM `user` WHERE `user`.`id` = ?";
         try {
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setInt(1, id);
+            ps.setString(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -283,9 +328,11 @@ public class UserDAO {
 
     /**
      * Function reset pass by Email
+     *
      * @param email
      * @return
      */
+    @Override
     public String resetPasswordByEmail(String email) {
         String randomPassword = RandomStringUtils.randomAlphanumeric(10);
 

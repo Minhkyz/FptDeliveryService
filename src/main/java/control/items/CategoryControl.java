@@ -1,6 +1,6 @@
 package control.items;
 
-import dao.ItemsDAO;
+import impl.ItemsDaoImpl;
 import entities.Category;
 import entities.Items;
 
@@ -17,7 +17,7 @@ public class CategoryControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String cateID = request.getParameter("cid");
-        ItemsDAO dao = new ItemsDAO();
+        ItemsDaoImpl dao = new ItemsDaoImpl();
 
         List<Items> list = dao.getItemsByCID(cateID);
 

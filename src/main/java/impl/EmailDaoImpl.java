@@ -1,4 +1,6 @@
-package dao;
+package impl;
+
+import dao.EmailDAO;
 
 import javax.mail.*;
 import javax.mail.internet.AddressException;
@@ -9,7 +11,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.Properties;
 
-public class EmailDAO {
+public class EmailDaoImpl implements EmailDAO {
 
     /**
      * Send Mail
@@ -25,6 +27,7 @@ public class EmailDAO {
      * @throws MessagingException
      * @throws UnsupportedEncodingException
      */
+
     public static void sendEmail(String host, String port,
                                  String senderEmail, String senderName, String password,
                                  String recipientEmail, String subject, String message) throws AddressException,

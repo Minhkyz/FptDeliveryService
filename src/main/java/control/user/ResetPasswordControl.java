@@ -1,14 +1,14 @@
 package control.user;
 
-import dao.EmailDAO;
-import dao.UserDAO;
+import impl.EmailDaoImpl;
+import impl.UserDaoImpl;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-import static dao.EmailDAO.sendEmail;
+import static impl.EmailDaoImpl.sendEmail;
 
 @WebServlet(name = "resetpassword", value = "/resetpassword")
 public class ResetPasswordControl extends HttpServlet {
@@ -34,7 +34,7 @@ public class ResetPasswordControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String recipient = request.getParameter("email");
         String subject = "Your Password has been reset";
-        UserDAO dao = new UserDAO();
+        UserDaoImpl dao = new UserDaoImpl();
         //String newPassword =  dao.resetPasswordByEmail(recipient);
         String passP  = "aaaa";
 
@@ -52,7 +52,7 @@ public class ResetPasswordControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String recipient = request.getParameter("email");
         String subject = "Your Password has been reset";
-        UserDAO dao = new UserDAO();
+        UserDaoImpl dao = new UserDaoImpl();
         String newPassword =  dao.resetPasswordByEmail(recipient);
         String passP  = "aaaa";
 
@@ -60,7 +60,7 @@ public class ResetPasswordControl extends HttpServlet {
         String message = "";
 
         try {
-            EmailDAO.sendEmail(host, port, email, name, pass,
+            EmailDaoImpl.sendEmail(host, port, email, name, pass,
                     recipient, subject, content);
             message = "Your password has been reset. Please check your e-mail.";
         } catch (Exception ex) {

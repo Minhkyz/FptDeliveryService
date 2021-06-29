@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +17,7 @@
 </head>
 
 <body>
+
 <br>
 <div class="container-fluid">
     <div class="row content">
@@ -146,7 +149,7 @@
                                 <div class="chat-header clearfix">
                                     <div class="row">
                                         <div class="col-lg-6">
-
+                                            <a>
                                             <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
                                             </a>
                                             <div class="chat-about">
@@ -160,25 +163,25 @@
 
                                 <div class="chat-history">
                                     <ul >
-                                        <li class="clearfix">
-                                            <div class="message-data text-right">
-                                                <span class="message-data-time">10:10 AM, Today</span>
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                                            </div>
-                                            <div class="message other-message float-right"> Hi Aiden, how are you? How is the project coming along? </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <div class="message-data">
-                                                <span class="message-data-time">10:12 AM, Today</span>
-                                            </div>
-                                            <div class="message my-message">Are we meeting today?</div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <div class="message-data">
-                                                <span class="message-data-time">10:15 AM, Today</span>
-                                            </div>
-                                            <div class="message my-message">Project has been already finished and I have results to show you.</div>
-                                        </li>
+                                        <c:forEach items="${list}" var="o">
+                                            <c:if test="${o.sender == sessionScope.acc.userID}">
+                                                <li class="clearfix">
+                                                <div class="message-data text-end">
+                                                    <span class="message-data-time">${o.time}</span>
+                                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                                </div>
+                                                <div class="message other-message float-right"> ${o.messages} </div>
+                                            </li>
+                                            </c:if>
+                                            <c:if test="${o.sender != sessionScope.acc.userID}">
+                                                <li class="clearfix">
+                                                    <div class="message-data">
+                                                        <span class="message-data-time">${o.time}</span>
+                                                    </div>
+                                                    <div class="message my-message">${o.messages}</div>
+                                                </li>
+                                            </c:if>
+                                        </c:forEach>
                                     </ul>
                                 </div>
 

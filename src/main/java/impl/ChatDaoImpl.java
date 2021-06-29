@@ -1,4 +1,5 @@
-package dao;
+package impl;
+import dao.ChatDAO;
 import dbcontext.DBConnection;
 import entities.Chat;
 
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-public class ChatDAO {
+public class ChatDaoImpl implements ChatDAO {
     Connection conn = null;
     PreparedStatement ps = null;
 
@@ -18,6 +19,7 @@ public class ChatDAO {
      * @param id
      * @return
      */
+    @Override
     public List<Chat> getMessagesByOrderId(int id){
         List<Chat> list = new ArrayList<>();
         ResultSet resultSet = DBConnection.querySet("select * from chat where ship_id = ?", id);
@@ -45,6 +47,7 @@ public class ChatDAO {
      * @param sender
      * @param mess
      */
+    @Override
     public void sendMessages(int ship_id, int sender, String mess){
         int result = 0;
         String query = "INSERT INTO `chat` (`ship_id`, `sender`, `messages`,`time`) VALUES (?, ?, ?, now())";

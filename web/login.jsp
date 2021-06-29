@@ -29,8 +29,7 @@
                 <div class="anhdahong">
                     <button id="hong" class="btn btn-lg btn-block" type="submit" href="#">
                         <i class="fa fa-home" id="icon-a"></i>
-                        <h4>Register/
-                            Login </h4>
+                        <h4>Home</h4>
                     </button>
                 </div>
 

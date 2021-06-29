@@ -29,8 +29,7 @@
                 <div class="anhdahong">
                     <button id="hong" class="btn btn-lg btn-block" type="submit" href="#">
                         <i class="fa fa-home" id="icon-a"></i>
-                        <h4>Register/
-                            Login </h4>
+                        <h4>Home</h4>
                     </button>
                 </div>
 
@@ -112,7 +111,7 @@
                                     </div>
                                     <div class="my-3"><input type="submit" value="Login" class="btn btn-primary"></div>
                                     <div class="mb-3"><span class="text-light-white">Don't have an account?</span> <a
-                                            href="#">Sign Up</a></div>
+                                            href="dangky.jsp">Sign Up</a></div>
                                 </form>
 
                             </div>
