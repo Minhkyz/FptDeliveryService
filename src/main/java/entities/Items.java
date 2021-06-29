@@ -7,7 +7,17 @@ public class Items {
     private String image;
     private String description;
     private int categoryID;
+    public int getAmount() {
+        if(amount == 0 ){
+            return 1;
+        }
+        else return amount;
+    }
 
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+    private int amount;
     public Items() {
     }
 
@@ -18,6 +28,15 @@ public class Items {
         this.image = image;
         this.description = description;
         this.categoryID = categoryID;
+    }
+    public Items(int id, double price, String name, String image, String description, int categoryID, int amount) {
+        this.id = id;
+        this.price = price;
+        this.name = name;
+        this.image = image;
+        this.description = description;
+        this.categoryID = categoryID;
+        this.amount = amount;
     }
 
     public int getId() {
