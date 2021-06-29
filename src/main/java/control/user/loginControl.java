@@ -25,8 +25,6 @@ public class loginControl extends HttpServlet {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
 
-        UserDaoImpl dao = new UserDaoImpl();
-        RoleDaoImpl role = new RoleDaoImpl();
         Users a = Factory.getInstanceUserDao().login(user,pass);
         if (a == null) {
             request.setAttribute("mess", "Wrong user or pass");
@@ -34,12 +32,11 @@ public class loginControl extends HttpServlet {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         } else {
             HttpSession session = request.getSession();
-            List<UserRole> b = role.userRoles(a.getUserID());
+            List<UserRole> b = Factory.getInstanceRoleDao().userRoles(a.getUserID());
             session.setAttribute("acc", a);
             session.setAttribute("role", b);
             session.setMaxInactiveInterval(300);
             response.sendRedirect("home");
-            //request.getRequestDispatcher("home").forward(request, response);
         }
 
     }
