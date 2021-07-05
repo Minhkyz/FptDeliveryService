@@ -1,5 +1,6 @@
 package control.items;
 
+import factory.Factory;
 import impl.ItemsDaoImpl;
 
 import javax.servlet.*;
@@ -48,8 +49,8 @@ public class UploadImageControl extends HttpServlet {
         File fileSaveDir1 = new File(savePath);
         dbFileName = UPLOAD_DIR + File.separator + fileName;
         part.write(savePath + File.separator);
-        ItemsDaoImpl dao = new ItemsDaoImpl();
-        dao.uploadImg(savePath,id);
+      //  ItemsDaoImpl dao = new ItemsDaoImpl();
+        Factory.getInstanceItemsDao().uploadImg(savePath,id);
     }
     private String extractFileName(Part part) {//This method will print the file name.
         String contentDisp = part.getHeader("content-disposition");

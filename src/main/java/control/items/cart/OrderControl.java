@@ -1,5 +1,6 @@
 package control.items.cart;
 
+import factory.Factory;
 import impl.ItemsDaoImpl;
 import entities.Items;
 
@@ -17,12 +18,12 @@ public class OrderControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         Cookie arr[] = request.getCookies();
         List<Items> list = new ArrayList<>();
-        ItemsDaoImpl dao = new ItemsDaoImpl();
+      //  ItemsDaoImpl dao = new ItemsDaoImpl();
         for (Cookie o : arr) {
             if (o.getName().equals("id")) {
                 String txt[] = o.getValue().split("#");
                 for (String s : txt) {
-                    list.add(dao.getItemsByID(s));
+                    list.add(Factory.getInstanceItemsDao().getItemsByID(s));
                 }
             }
         }

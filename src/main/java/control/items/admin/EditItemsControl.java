@@ -1,5 +1,6 @@
-package control.items;
+package control.items.admin;
 
+import factory.Factory;
 import impl.ItemsDaoImpl;
 import entities.Category;
 import entities.Items;
@@ -25,10 +26,10 @@ public class EditItemsControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("id");
-        ItemsDaoImpl dao = new ItemsDaoImpl();
-        Items items = dao.getItemsByID(id);
+
+        Items items = Factory.getInstanceItemsDao().getItemsByID(id);
         request.setAttribute("detail", items);
-        List<Category> category = dao.getAllCategory();
+        List<Category> category = Factory.getInstanceItemsDao().getAllCategory();
         request.setAttribute("cate", category);
         request.getRequestDispatcher("AdminEdit.jsp").forward(request, response);
     }
@@ -64,7 +65,7 @@ public class EditItemsControl extends HttpServlet {
             part.write(savePath + File.separator);
 
             ItemsDaoImpl dao = new ItemsDaoImpl();
-            dao.editItems(price, name, saveImg, description, categoryID, id);
+            Factory.getInstanceItemsDao().editItems(price, name, saveImg, description, categoryID, id);
             response.sendRedirect("ShowListItems");
     }
 

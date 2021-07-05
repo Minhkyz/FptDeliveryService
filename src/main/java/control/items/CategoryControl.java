@@ -1,5 +1,6 @@
 package control.items;
 
+import factory.Factory;
 import impl.ItemsDaoImpl;
 import entities.Category;
 import entities.Items;
@@ -17,13 +18,12 @@ public class CategoryControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String cateID = request.getParameter("cid");
-        ItemsDaoImpl dao = new ItemsDaoImpl();
 
-        List<Items> list = dao.getItemsByCID(cateID);
+        List<Items> list = Factory.getInstanceItemsDao().getItemsByCID(cateID);
 
-        List<Category> listC = dao.getAllCategory();
+        List<Category> listC = Factory.getInstanceItemsDao().getAllCategory();
 
-          Items last = dao.getLast();
+        Items last = Factory.getInstanceItemsDao().getLast();
 
         request.setAttribute("listP", list);
         request.setAttribute("listCC", listC);
