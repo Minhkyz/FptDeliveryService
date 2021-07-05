@@ -23,6 +23,12 @@ public class ShowChatControl extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+        String id = request.getParameter("orderid");
+        String sender = request.getParameter("sender");
+        String mess = request.getParameter("mess");
+        Factory.getInstanceChatDao().sendMessages(id,sender,mess);
+        response.sendRedirect("ShowChatControl?id="+id);
     }
 }

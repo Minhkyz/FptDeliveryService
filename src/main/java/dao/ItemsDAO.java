@@ -22,4 +22,6 @@ public interface ItemsDAO {
     void editItems2(String price, String name, String description, String categoryID, String id);
     void deleteItems(String pid);
     void uploadImg(String img, String id);
+    void insertOrder(String userID, String status);
+
 }

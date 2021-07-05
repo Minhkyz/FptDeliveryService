@@ -1,5 +1,6 @@
 package control;
 
+import factory.Factory;
 import impl.ItemsDaoImpl;
 import entities.Category;
 import entities.Items;
@@ -17,15 +18,16 @@ public class home extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ItemsDaoImpl dao = new ItemsDaoImpl();
-        List<Items> list = dao.getAllItems();
+
+        List<Items> list = Factory.getInstanceItemsDao().getAllItems();
         request.setAttribute("listP", list);
         String id = request.getParameter("pid");
-        Items p = dao.getItemsByID(id);
-        List<Category> listC = dao.getAllCategory();
+        Items p = Factory.getInstanceItemsDao().getItemsByID(id);
+        List<Category> listC = Factory.getInstanceItemsDao().getAllCategory();
         request.setAttribute("detail", p);
         request.setAttribute("listCC", listC);
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
+        //request.getRequestDispatcher("Home.jsp").forward(request, response);
+        request.getRequestDispatcher("Rebuild/Home.jsp").forward(request, response);
     }
 
     @Override

@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-<form action="newpass" method="post">
+<form action="ResetPassControl" method="post">
 
     <div class="form-group">
         <label for="inputPassword">Password</label>

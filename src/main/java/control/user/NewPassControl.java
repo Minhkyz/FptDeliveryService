@@ -20,7 +20,7 @@ public class NewPassControl extends HttpServlet {
         //String recipient = request.getParameter("email");
         EmailDaoImpl dao = new EmailDaoImpl();
         try {
-            dao.sendEmail("smtp.gmail.com", "587", "gennikemk@gmail.com", "Minh Ky", "0919530606Ky!", "kyhmce140135@fpt.edu.vn", "Send Mail", "aaa");
+          //  dao.sendEmail("smtp.gmail.com", "587", "gennikemk@gmail.com", "Minh Ky", "0919530606Ky!", "kyhmce140135@fpt.edu.vn", "Send Mail", "aaa");
             String message = "thanh cong";
             request.setAttribute("message", message);
             request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -39,7 +39,7 @@ public class NewPassControl extends HttpServlet {
         //String recipient = request.getParameter("email");
         EmailDaoImpl dao = new EmailDaoImpl();
         try {
-            dao.sendEmail("smtp.gmail.com", "587", "gennikemk@gmail.com", "Minh Ky", "0919530606Ky!", "kyhmce140135@fpt.edu.vn", "Send Mail", "aaa");
+           // dao.sendEmail("smtp.gmail.com", "587", "gennikemk@gmail.com", "Minh Ky", "0919530606Ky!", "kyhmce140135@fpt.edu.vn", "Send Mail", "aaa");
             String message = "thanh cong";
             request.setAttribute("message", message);
             request.getRequestDispatcher("login.jsp").forward(request, response);

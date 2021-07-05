@@ -6,6 +6,7 @@ import entities.Users;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 
+import javax.mail.MessagingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -336,17 +337,22 @@ public class UserDaoImpl implements UserDAO {
     public String resetPasswordByEmail(String email) {
         String randomPassword = RandomStringUtils.randomAlphanumeric(10);
 
-        String query = "UPDATE `user` SET password = ? WHERE `user`.`email` = ?";
+        String query = "UPDATE `user` SET `password` = ? WHERE `user`.`email` = ?";
         try {
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, randomPassword);
             ps.setString(2, email);
             ps.executeUpdate();
-            return randomPassword;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return randomPassword;
+    }
+
+    public static void main(String[] args) {
+        UserDaoImpl dao = new UserDaoImpl();
+        System.out.println(dao.resetPasswordByEmail("gennikemk@gmail.con"));
+
     }
 }

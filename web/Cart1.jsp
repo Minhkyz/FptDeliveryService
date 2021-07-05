@@ -112,7 +112,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-
+                                    <input name="user" value="${sessionScope.acc.userID}" type="hidden">
                                     <!-- Shopping cart table -->
                                     <div class="table-responsive">
                                         <table class="table">
@@ -151,6 +151,8 @@
                                                     <td class="align-middle"><a href="RemoveItemControl?id=${o.id}" class="text-dark">
                                                         <button type="button" class="btn btn-danger">Delete</button>
                                                     </a>
+                                                        <input name="idItem" value="${o.id}" type="hidden">
+                                                        <input name="idItem" value="${o.amount}" type="hidden">
                                                     </c:forEach>
                                             </tbody>
                                         </table>
@@ -158,6 +160,7 @@
                                     <!-- End -->
                                 </div>
                             </div>
+
 
                             <!--
                              <div class="row py-5 p-4 bg-white rounded shadow-sm">
@@ -183,13 +186,14 @@
                                   <!--      <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">VAT</strong><strong></strong></li> -->
                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
                                             <h5 class="font-weight-bold"> ${sum}VND</h5>
+                                            <input name="sum">
                                         </li>
                                     </ul>
                                     <c:if test="${sessionScope.acc == null}">
                                         <a href="login" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
                                     </c:if>
                                     <c:if test="${sessionScope.acc != null}">
-                                        <a href="order" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
+                                        <a href="ShowCartControl" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
                                     </c:if>
                                 </div>
                             </div>

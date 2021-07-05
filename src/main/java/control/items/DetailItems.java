@@ -13,9 +13,9 @@ public class DetailItems extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String id = request.getParameter("id");
-        Items p = Factory.getInstanceItemsDao().getItemsByID(id);
-        request.setAttribute("detail", p);
+        String id = request.getParameter("pid");
+        Items a = Factory.getInstanceItemsDao().getItemsByID(id);
+        request.setAttribute("detail", a);
         request.getRequestDispatcher("ProductDetail.jsp").forward(request, response);
     }
 

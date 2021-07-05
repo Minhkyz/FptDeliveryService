@@ -150,7 +150,7 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <a>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
                                             </a>
                                             <div class="chat-about">
                                                 <h6 >hoang hao</h6>
@@ -166,12 +166,12 @@
                                         <c:forEach items="${list}" var="o">
                                             <c:if test="${o.sender == sessionScope.acc.userID}">
                                                 <li class="clearfix">
-                                                <div class="message-data text-end">
-                                                    <span class="message-data-time">${o.time}</span>
-                                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                                                </div>
-                                                <div class="message other-message float-right"> ${o.messages} </div>
-                                            </li>
+                                                    <div class="message-data text-end">
+                                                        <span class="message-data-time">${o.time}</span>
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                                    </div>
+                                                    <div class="message other-message float-right"> ${o.messages} </div>
+                                                </li>
                                             </c:if>
                                             <c:if test="${o.sender != sessionScope.acc.userID}">
                                                 <li class="clearfix">
@@ -184,13 +184,16 @@
                                         </c:forEach>
                                     </ul>
                                 </div>
-
+                                <form action="ShowChatControl" method="post">
                                 <div class="input-group mb-0">
-                                    <div class="input-group-prepend">
+                                    <input type="hidden" name="orderid" value="${list[0].orderID}">
+                                    <input type="hidden" name="sender" value="${sessionScope.acc.userID}">
+                                    <input type="text" name="mess" class="form-control" placeholder="Enter text here...">
+                                    <div class="input-group-prepend" type="submit">
                                         <span class="input-group-text"><i class="fa fa-send"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Enter text here...">
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -299,9 +299,24 @@ public class ItemsDaoImpl implements ItemsDAO {
         }
     }
 
+    @Override
+    public void insertOrder(String userID, String status) {
+        String query = "INSERT INTO `order` (`user_id`, `status`, `time`) VALUES (?, ?, NOW());";
+        try {
+            conn = new DBConnection().getConnection(); // call function form DBconnection
+            ps = conn.prepareStatement(query);
+            ps.setString(1, userID);
+            ps.setString(2, status);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+
+    }
 
     public static void main(String[] args) {
         ItemsDaoImpl dao = new ItemsDaoImpl();
+        Items a = dao.getItemsByID("2");
+        System.out.println(a.getName());
         // File.separator if(fileName.contains("blob:http://localhost:8080/")){
     }
 

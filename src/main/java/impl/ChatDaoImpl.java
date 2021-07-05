@@ -48,7 +48,7 @@ public class ChatDaoImpl implements ChatDAO {
      * @param mess
      */
     @Override
-    public void sendMessages(int ship_id, int sender, String mess){
+    public void sendMessages(String ship_id, String sender, String mess){
         int result = 0;
         String query = "INSERT INTO `chat` (`ship_id`, `sender`, `messages`,`time`) VALUES (?, ?, ?, now())";
         try {
@@ -56,13 +56,22 @@ public class ChatDaoImpl implements ChatDAO {
             LocalDateTime now = LocalDateTime.now();
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setInt(1, ship_id);
-            ps.setInt(2, sender);
+            ps.setString(1, ship_id);
+            ps.setString(2, sender);
             ps.setString(3, mess);
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public static void main(String[] args) {
+        ChatDaoImpl dao = new ChatDaoImpl();
+//        dao.sendMessages("2","1","a");
+        List<Chat> list = dao.getMessagesByOrderId(2);
+        for(Chat o:list) {
+            System.out.println(o.getMessages());
+        }
+        // File.separator if(fileName.contains("blob:http://localhost:8080/")){
     }
 
 }

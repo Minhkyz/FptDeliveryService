@@ -1,6 +1,7 @@
 package impl;
 
 import dao.EmailDAO;
+import entities.Items;
 
 import javax.mail.*;
 import javax.mail.internet.AddressException;
@@ -13,53 +14,52 @@ import java.util.Properties;
 
 public class EmailDaoImpl implements EmailDAO {
 
-    /**
-     * Send Mail
-     * @param host
-     * @param port
-     * @param senderEmail
-     * @param senderName
-     * @param password
-     * @param recipientEmail
-     * @param subject
-     * @param message
-     * @throws AddressException
-     * @throws MessagingException
-     * @throws UnsupportedEncodingException
-     */
+    @Override
+    public void SendingEmail(String Email,String Body) throws AddressException, MessagingException
+    {
 
-    public static void sendEmail(String host, String port,
-                                 String senderEmail, String senderName, String password,
-                                 String recipientEmail, String subject, String message) throws AddressException,
-            MessagingException, UnsupportedEncodingException {
+        String host ="smtp.gmail.com";
+        String from ="gennikemk@gmail.com";  //Your mail id
+        String pass ="0919530606Ky!";   // Your Password
+        Properties props = System.getProperties();
+        props.put("mail.smtp.starttls.enable", "true"); // added this line
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.user", from);
+        props.put("mail.smtp.password", pass);
+        props.put("mail.smtp.port", "25");
+        props.put("mail.smtp.auth", "true");
+        String[] to = {Email}; // To Email address
+        Session session = Session.getDefaultInstance(props, null);
+        MimeMessage message = new MimeMessage(session);
+        message.setFrom(new InternetAddress(from));
+        InternetAddress[] toAddress = new InternetAddress[to.length];
+        // To get the array of addresses
+        for( int i=0; i < to.length; i++ )
+        { // changed from a while loop
+            toAddress[i] = new InternetAddress(to[i]);
+        }
+        System.out.println(Message.RecipientType.TO);
+        for( int j=0; j < toAddress.length; j++)
+        { // changed from a while loop
+            message.addRecipient(Message.RecipientType.TO, toAddress[j]);
+        }
+        message.setSubject("Password Reset for FPT Delivery");
+        message.setContent(Body,"text/html");
+        Transport transport = session.getTransport("smtp");
+        transport.connect(host, from, pass);
+        transport.sendMessage(message, message.getAllRecipients());
+        transport.close();
+    }
 
-        // sets SMTP server properties
-        Properties properties = new Properties();
-        properties.put("mail.smtp.host", host);
-        properties.put("mail.smtp.port", port);
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable", "true");
-
-        // creates a new session with an authenticator
-        Authenticator auth = new Authenticator() {
-            public PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(senderEmail, password);
-            }
-        };
-
-        Session session = Session.getInstance(properties, auth);
-
-        // creates a new e-mail message
-        Message msg = new MimeMessage(session);
-        msg.setFrom(new InternetAddress(senderEmail, senderName));
-        InternetAddress[] toAddresses = {new InternetAddress(recipientEmail)};
-        msg.setRecipients(Message.RecipientType.TO, toAddresses);
-        msg.setSubject(subject);
-        msg.setSentDate(new Date());
-        msg.setText(message);
-
-        // sends the e-mail
-        Transport.send(msg);
+    public static void main(String[] args) {
+        EmailDaoImpl dao = new EmailDaoImpl();
+        String body="<html><body><table width=100%><tr><td>Hi this is Test mail</td></tr></table></body></html>";
+        try {
+            dao.SendingEmail("nguyentien05072001@gmail.com",body);
+            dao.SendingEmail("danhhvce140447@fpt.edu.vn",body);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
 
     }
 }
