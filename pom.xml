@@ -78,6 +78,8 @@
                             <goal>copy</goal>
                         </goals>
                         <configuration>
+                            <source>16</source>
+                            <target>16</target>
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>com.github.jsimone</groupId>
