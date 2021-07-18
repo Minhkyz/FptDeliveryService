@@ -1,0 +1,46 @@
+#parent form {
+
+    width: 450px;
+    padding: 50px 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 6%;
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.15);
+}
+
+#parent form label {
+    font-weight: 500;
+    color: #101030;
+    justify-items: left;
+}
+
+
+#parent form input {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+    color: #101010;
+}
+
+#parent form input[type="button"] {
+    background-color: #00004a;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 30px;
+    width: 480px;
+}
+
+#parent form .fa-lock {
+    font-size: 60px;
+}
+
+#parent form #forgotpass {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    font-size: medium;
+}
