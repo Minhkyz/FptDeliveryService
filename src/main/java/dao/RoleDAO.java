@@ -8,7 +8,7 @@ public interface RoleDAO {
     int addRole(String name);
     int editRole(String id, String name);
     int setUserRole(int userID, int roleID);
-    List<UserRole> userRoles(int id);
+    UserRole userRoles(int id);
     int editUserRole(String userID, String roleID);
     int deleteUserRole(String id);
 }

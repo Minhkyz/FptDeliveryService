@@ -17,7 +17,7 @@ public class LoginControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        response.sendRedirect("login.jsp");
+        request.getRequestDispatcher("SignIn.jsp").forward(request, response);
     }
 
     @Override
@@ -29,14 +29,14 @@ public class LoginControl extends HttpServlet {
         if (a == null) {
             request.setAttribute("mess", "Wrong user or pass");
             request.setAttribute("user",user);
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("SignIn.jsp").forward(request, response);
         } else {
             HttpSession session = request.getSession();
-            List<UserRole> b = Factory.getInstanceRoleDao().userRoles(a.getUserID());
+            UserRole b = Factory.getInstanceRoleDao().userRoles(a.getUserID());
             session.setAttribute("acc", a);
-            session.setAttribute("role", b);
+           // session.setAttribute("role", b);
             session.setMaxInactiveInterval(300);
-            response.sendRedirect("home");
+            response.sendRedirect("admin");
         }
 
     }

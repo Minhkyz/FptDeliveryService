@@ -9,12 +9,12 @@ public class Users {
     private String fullName;
     private String phone;
     private String img;
-
+    private int role;
 
     public Users() {
     }
 
-    public Users(int userID, String username, String password, String email, String fullName, String phone, String img) {
+    public Users(int userID, String username, String password, String email, String fullName, String phone, String img, int role) {
         this.userID = userID;
         this.username = username;
         this.password = password;
@@ -22,6 +22,7 @@ public class Users {
         this.fullName = fullName;
         this.phone = phone;
         this.img = img;
+        this.role = role;
     }
 
     public int getUserID() {
@@ -78,5 +79,13 @@ public class Users {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 }

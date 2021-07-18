@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDAO {
     @Override
     public int add(String username, String password, String email, String fullName, String phone) {
         int result = 0;
-        String query = "INSERT INTO `user` (`username`, `password`, `email`, `fullname`, `phone`, `img`) VALUES (?, ?, ?, ?, ?, '')";
+        String query = "INSERT INTO `user` (`username`, `password`, `email`, `fullname`, `phone`, `img`, `role`) VALUES (?, ?, ?, ?, ?, '',1)";
         try {
             conn = new DBConnection().getConnection();
             ps = conn.prepareStatement(query);
@@ -66,7 +66,8 @@ public class UserDaoImpl implements UserDAO {
                             resultSet.getString(4),
                             resultSet.getString(5),
                             resultSet.getString(6),
-                            resultSet.getString(7)
+                            resultSet.getString(7),
+                            resultSet.getInt(8)
                     );
                 }
             } catch (Exception e) {
@@ -95,7 +96,8 @@ public class UserDaoImpl implements UserDAO {
                             resultSet.getString(4),
                             resultSet.getString(5),
                             resultSet.getString(6),
-                            resultSet.getString(7)
+                            resultSet.getString(7),
+                            resultSet.getInt(8)
                     ));
                 }
             } catch (Exception e) {
@@ -124,7 +126,8 @@ public class UserDaoImpl implements UserDAO {
                             resultSet.getString(4),
                             resultSet.getString(5),
                             resultSet.getString(6),
-                            resultSet.getString(7)
+                            resultSet.getString(7),
+                            resultSet.getInt(8)
                     );
                 }
             } catch (Exception e) {
@@ -153,7 +156,8 @@ public class UserDaoImpl implements UserDAO {
                             resultSet.getString(4),
                             resultSet.getString(5),
                             resultSet.getString(6),
-                            resultSet.getString(7)
+                            resultSet.getString(7),
+                            resultSet.getInt(8)
                     );
                 }
             } catch (Exception e) {
@@ -182,7 +186,8 @@ public class UserDaoImpl implements UserDAO {
                             resultSet.getString(4),
                             resultSet.getString(5),
                             resultSet.getString(6),
-                            resultSet.getString(7)
+                            resultSet.getString(7),
+                            resultSet.getInt(8)
                     );
                 }
             } catch (Exception e) {
@@ -211,7 +216,8 @@ public class UserDaoImpl implements UserDAO {
                             resultSet.getString(4),
                             resultSet.getString(5),
                             resultSet.getString(6),
-                            resultSet.getString(7)
+                            resultSet.getString(7),
+                            resultSet.getInt(8)
                     );
                 }
             } catch (Exception e) {
@@ -233,7 +239,8 @@ public class UserDaoImpl implements UserDAO {
                             resultSet.getString(4),
                             resultSet.getString(5),
                             resultSet.getString(6),
-                            resultSet.getString(7)
+                            resultSet.getString(7),
+                            resultSet.getInt(8)
                     );
                 }
             } catch (Exception e) {
@@ -263,7 +270,8 @@ public class UserDaoImpl implements UserDAO {
                             resultSet.getString(4),
                             resultSet.getString(5),
                             resultSet.getString(6),
-                            resultSet.getString(7)
+                            resultSet.getString(7),
+                            resultSet.getInt(8)
                     ));
                 }
             } catch (Exception e) {

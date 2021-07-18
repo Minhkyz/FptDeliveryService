@@ -21,13 +21,9 @@ public class home extends HttpServlet {
 
         List<Items> list = Factory.getInstanceItemsDao().getAllItems();
         request.setAttribute("listP", list);
-        String id = request.getParameter("pid");
-        Items p = Factory.getInstanceItemsDao().getItemsByID(id);
         List<Category> listC = Factory.getInstanceItemsDao().getAllCategory();
-        request.setAttribute("detail", p);
         request.setAttribute("listCC", listC);
-        //request.getRequestDispatcher("Home.jsp").forward(request, response);
-        request.getRequestDispatcher("Rebuild/Home.jsp").forward(request, response);
+        request.getRequestDispatcher("User_Home.jsp").forward(request, response);
     }
 
     @Override

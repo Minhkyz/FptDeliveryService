@@ -10,12 +10,13 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "RegisterControl", value = "/RegisterControl")
+    @WebServlet(name = "RegisterControl", value = "/register")
 public class RegisterControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        response.sendRedirect("dangky.jsp");
+        request.getRequestDispatcher("SignUp.jsp").forward(request, response);
+        //response.sendRedirect("Rebuild/SignUp.jsp");
     }
 
     @Override
@@ -43,11 +44,11 @@ public class RegisterControl extends HttpServlet {
                 Factory.getInstanceUserDao().add(username, pass, email, fullname, phone);
                 Users a = Factory.getInstanceUserDao().getUserByEmail(email);
                 Factory.getInstanceRoleDao().setUserRole(a.getUserID(),1);
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("SignIn.jsp");
             }
         } else {
             request.setAttribute("mess", "Those password didn't match");
-            request.getRequestDispatcher("dangky.jsp").forward(request, response);
+            request.getRequestDispatcher("SignUp.jsp").forward(request, response);
         }
     }
 }

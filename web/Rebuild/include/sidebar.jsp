@@ -28,7 +28,8 @@
                 <a href="#">About Me</a>
             </li>
         </c:if>
-        <!-- Admin dasboard -->
+
+        <!-- Login  -->
         <c:if test="${sessionScope.acc != null}">
             <li class="dashboard">
                 <i class="fa fa-dashcube"></i>

@@ -63,24 +63,24 @@ public class RoleDaoImpl implements RoleDAO {
         return result;
     }
 
-    @Override // dang lam
-    public List<UserRole> userRoles(int id) {
-        List<UserRole> list = new ArrayList<>();
+
+    @Override
+    public UserRole userRoles(int id) {
         ResultSet resultSet = DBConnection.querySet("SELECT * FROM `user_roles` WHERE `user_id` = ?",id);
         if (resultSet != null) {
             try {
                 while (resultSet.next()) {
-                    list.add(new UserRole(
+                    return new UserRole(
                             resultSet.getInt(1),
                             resultSet.getInt(2),
                             resultSet.getInt(3)
-                    ));
+                    );
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        return list;
+        return null;
     }
 
     @Override
@@ -114,5 +114,10 @@ public class RoleDaoImpl implements RoleDAO {
         }
         return result;
     }
+    public static void main(String[] args) {
+        RoleDaoImpl dao = new RoleDaoImpl();
+        UserRole a = dao.userRoles(1);
+        System.out.println(a.getUserID());
 
+    }
 }

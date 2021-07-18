@@ -15,21 +15,9 @@ import java.util.List;
 public class ShowItemAdminControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      //  ItemsDaoImpl dao = new ItemsDaoImpl();
         List<Items> list = Factory.getInstanceItemsDao().getAllItems();
         request.setAttribute("listP", list);
-
-
-
-        String id = request.getParameter("pid");
-
-        Items p = Factory.getInstanceItemsDao().getItemsByID(id);
-        List<Category> listC = Factory.getInstanceItemsDao().getAllCategory();
-
-
-        request.setAttribute("detail", p);
-        request.setAttribute("listCC", listC);
-        request.getRequestDispatcher("Admin_ItemsManage.jsp").forward(request, response);
+        request.getRequestDispatcher("Admin_Item_List.jsp").forward(request, response);
     }
 
     @Override

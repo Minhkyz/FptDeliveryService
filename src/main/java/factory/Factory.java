@@ -19,5 +19,8 @@ public class Factory {
     public static EmailDAO getInstanceEmailDao(){
         return new EmailDaoImpl();
     }
+    public static OrderDAO getInstanceOrderDao(){
+        return new OrderDaoImpl();
+    }
 
 }

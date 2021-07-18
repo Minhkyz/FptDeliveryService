@@ -13,7 +13,7 @@ public class AddUserControl extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("Admin_User_Add.jsp").forward(request,response);
     }
 
     @Override
@@ -29,16 +29,16 @@ public class AddUserControl extends HttpServlet {
 
         if (Factory.getInstanceUserDao().checkUserExistUsername(username) != null) {
             request.setAttribute("mess", "Username didn't exist");
-            request.getRequestDispatcher("user").forward(request, response);
+            request.getRequestDispatcher("addUser").forward(request, response);
         } else if (Factory.getInstanceUserDao().checkUserExistEmail(email) != null) {
             request.setAttribute("mess", "Email didn't exist");
-            request.getRequestDispatcher("user").forward(request, response);
+            request.getRequestDispatcher("addUser").forward(request, response);
         } else if (Factory.getInstanceUserDao().checkUserExistPhone(phone) != null) {
             request.setAttribute("mess", "Phone didn't exist");
-            request.getRequestDispatcher("user").forward(request, response);
+            request.getRequestDispatcher("addUser").forward(request, response);
         } else {
             Factory.getInstanceUserDao().add(username,password,email,fullName,phone);
-            response.sendRedirect("user");
+            response.sendRedirect("UserList");
         }
 
     }
