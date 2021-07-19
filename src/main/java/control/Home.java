@@ -11,14 +11,12 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "home", value = "/home")
-public class home extends HttpServlet {
+@WebServlet(name = "Home", value = "/Home")
+public class Home extends HttpServlet {
 
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
         List<Items> list = Factory.getInstanceItemsDao().getAllItems();
         request.setAttribute("listP", list);
         List<Category> listC = Factory.getInstanceItemsDao().getAllCategory();

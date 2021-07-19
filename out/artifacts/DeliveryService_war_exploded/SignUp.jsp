@@ -24,58 +24,7 @@
 <div class="container">
     <jsp:include page="include/Navbar.jsp" />
     <div class="container-body">
-        <div class="sidebar" id="sidebar">
-            <ul>
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class="fa fa-home" aria-hidden="true"></i>
-                            <i class="fa fa-home" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="name"><span data-text="Home">Home</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class="fa fa-question-circle" aria-hidden="true"></i>
-                            <i class="fa fa-question-circle" aria-hidden="true"></i>
-                        </div>
-                        <div class="name"><span data-text="About">About</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class="fa fa-motorcycle" aria-hidden="true"></i>
-                            <i class="fa fa-motorcycle" aria-hidden="true"></i>
-                        </div>
-                        <div class="name"><span data-text="Delivering">Delivering</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                        </div>
-                        <div class="name"><span data-text="Feedback">Feedback</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class="fa fa-cogs" aria-hidden="true"></i>
-                            <i class="fa fa-cogs" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="name"><span data-text="Settings">Settings</span></div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
+        <jsp:include page="include/sidebar.jsp" />
             <!--Body-->
             <jsp:include page="include/SignUp.jsp" />
             <!-- end Body-->

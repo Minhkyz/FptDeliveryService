@@ -41,94 +41,9 @@
 
 <body>
 <div class="container">
-    <div class="navbar">
-        <div class="logo">
-            <img style="width: 40px;" src="./images/bgremove.png" alt="">
-            <span class="logoname">Web Logo</span>
-        </div>
-
-        <div class="searchbox">
-            <form action="">
-                <input type="text" placeholder="Search">
-                <i class="fa fa-search"></i>
-            </form>
-        </div>
-
-        <div class="navitem">
-            <div class="lang">
-                <select name="language" id="">
-                    <option value="">English</option>
-                    <option value="">Hindi</option>
-                </select>
-            </div>
-
-            <div class="icons">
-                <ul>
-                    <li><i class="fa fa-envelope"></i></li>
-                    <li><i class="fa fa-bell"></i></li>
-                </ul>
-            </div>
-
-            <div class="account">
-                <img width="25px" height="25px" src="./images/fptdelivery.png" alt="">
-                <span class="name">robert downey</span>
-                <span class="username">@robert564</span>
-            </div>
-        </div>
-    </div>
-
+    <jsp:include page="include/Navbar.jsp" />
     <div class="container-body">
-        <div class="sidebar" id="sidebar"  id="mainsidebar" >
-            <ul>
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class="fa fa-home" aria-hidden="true"></i>
-                            <i class="fa fa-home" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="name"><span data-text="Home">Home</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class="fa fa-question-circle" aria-hidden="true"></i>
-                            <i class="fa fa-question-circle" aria-hidden="true"></i>
-                        </div>
-                        <div class="name"><span data-text="About">About</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class="fa fa-motorcycle" aria-hidden="true"></i>
-                            <i class="fa fa-motorcycle" aria-hidden="true"></i>
-                        </div>
-                        <div class="name"><span data-text="Delivering">Delivering</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                        </div>
-                        <div class="name"><span data-text="Feedback">Feedback</span></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="icon">
-                            <i class="fa fa-cogs" aria-hidden="true"></i>
-                            <i class="fa fa-cogs" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="name"><span data-text="Settings">Settings</span></div>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <jsp:include page="include/sidebar.jsp" />
         <!--Start body-->
         <div class="main-body">
 

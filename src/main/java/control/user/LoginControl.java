@@ -34,9 +34,8 @@ public class LoginControl extends HttpServlet {
             HttpSession session = request.getSession();
             UserRole b = Factory.getInstanceRoleDao().userRoles(a.getUserID());
             session.setAttribute("acc", a);
-           // session.setAttribute("role", b);
             session.setMaxInactiveInterval(300);
-            response.sendRedirect("admin");
+            response.sendRedirect("HomePage");
         }
 
     }

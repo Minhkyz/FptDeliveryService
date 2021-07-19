@@ -7,67 +7,109 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div class="sidebar">
+<div class="sidebar" id="sidebar" id="mainsidebar">
     <ul>
-        <!--Chua login -->
         <c:if test="${sessionScope.acc == null}">
-            <li class="dashboard">
-                <i class="fa fa-dashcube"></i>
-                <a href="home">Home</a>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="name"><span data-text="Home">Home</span></div>
+                </a>
             </li>
             <li>
-                <i class="fa fa-user"></i>
-                <a href="login">Login</a>
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="name"><span data-text="About">Login</span></div>
+                </a>
             </li>
             <li>
-                <i class="fa fa-user-plus"></i>
-                <a href="#">Register</a>
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-motorcycle" aria-hidden="true"></i>
+                        <i class="fa fa-motorcycle" aria-hidden="true"></i>
+                    </div>
+                    <div class="name"><span data-text="Delivering">Register</span></div>
+                </a>
             </li>
             <li>
-                <i class="fa fa-info-circle"></i>
-                <a href="#">About Me</a>
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-motorcycle" aria-hidden="true"></i>
+                        <i class="fa fa-motorcycle" aria-hidden="true"></i>
+                    </div>
+                    <div class="name"><span data-text="Delivering">About Me</span></div>
+                </a>
             </li>
         </c:if>
-
-
-        <!-- Login  -->
         <c:if test="${sessionScope.acc != null}">
-            <li class="dashboard">
-                <i class="fa fa-dashcube"></i>
-                <a href="home">Home</a>
-            </li>
-            <c:forEach items="${sessionScope.role}" var="o">
-                <c:if test="${o.roleID == 3}">
-                    <li>
-                        <i class="fa fa-dashcube"></i>
-                        <a href="#">Dashboard</a>
-                    </li>
-                </c:if>
-            </c:forEach>
             <li>
-                <i class="fa fa-money"></i>
-                <a href="#">Delivery</a>
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="name"><span data-text="Home">Home</span></div>
+                </a>
+            </li>
+            <c:if test="${sessionScope.acc.role == 2 || sessionScope.acc.role == 3}">
+                <li>
+                    <a href="#">
+                        <div class="icon">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <div class="name"><span data-text="DashBoard">DashBoard</span></div>
+                    </a>
+                </li>
+            </c:if>
+            <li>
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-motorcycle" aria-hidden="true"></i>
+                        <i class="fa fa-cogs" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="name"><span data-text="Delivery">Delivery</span></div>
+                </a>
             </li>
             <li>
-                <i class="fa fa-credit-card-alt"></i>
-                <a href="#">Order</a>
+                <a href="#">
+                    <div class="icon"><i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                        <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="name"><span data-text="Ord">Order</span></div>
+                </a>
             </li>
             <li>
-                <i class="fa fa-envelope-o"></i>
-                <a href="#">Chat</a>
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-comments-o" aria-hidden="true"></i>
+                        <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="name"><span data-text="Chat">Chat</span></div>
+                </a>
             </li>
             <li>
-                <i class="fa fa-envelope-o"></i>
-                <a href="#">Add New Items</a>
+                <a href="#">
+                    <div class="icon">
+                        <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                        <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="name"><span data-text="Add New">Add New</span></div>
+                </a>
             </li>
-            <li>
-                <i class="fa fa-history"></i>
-                <a href="#">History</a>
-            </li>
-            <li>
-                <i class="fa fa-info-circle"></i>
-                <a href="#">About Me</a>
-            </li>
+
         </c:if>
     </ul>
 </div>

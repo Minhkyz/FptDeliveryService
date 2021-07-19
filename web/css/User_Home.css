@@ -256,11 +256,10 @@ body .container
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-
-    margin: 20px 0 20px 20px;
+    margin: 20px 0px 0px 20px;
     background: rgba(255,255,255,.6);
     border-radius: 14px;
-    padding: 10px;
+    padding: 6px;
     height: 450px !important;
 
 
@@ -632,6 +631,7 @@ a {
     margin: 20px;
     background: linear-gradient(-20deg, white 60%, #77a6a7 10%);
     border-radius: 5% !important;
+    width: 400px;
 
 }
 
