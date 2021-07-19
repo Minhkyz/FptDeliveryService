@@ -245,7 +245,8 @@ body .container
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
 *
 
-#sidebar {
+#
+width: 300px;bar {
     transform: translateX(-16px);
 }
 
@@ -256,12 +257,13 @@ body .container
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-
-    margin: 20px 0 20px 20px;
+    margin: 20px 0px 0px 20px;
     background: rgba(255,255,255,.6);
     border-radius: 14px;
-    padding: 10px;
+    padding: 6px;
     height: 450px !important;
+
+    width: 170px !important;
 
 
 
@@ -632,6 +634,7 @@ a {
     margin: 20px;
     background: linear-gradient(-20deg, white 60%, #77a6a7 10%);
     border-radius: 5% !important;
+
 
 }
 

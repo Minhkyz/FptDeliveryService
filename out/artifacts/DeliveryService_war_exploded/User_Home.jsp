@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-
     <!--Open Carousel-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 
@@ -80,70 +79,33 @@
                             <div class="col-sm-3">
                                 <div class="card" id="product_card">
                                     <div class="bkg"></div>
-                                    <img src="./images/shipper.gif" id="profile" alt="">
+                                    <img src="./images/mini_carousel_6.jpg" id="profile" alt="">
                                     <div class="info">
-                                        <h2>Tra Thai Xo</h2>
-                                        <h4>Thuc an</h4>
+                                        <h2>Bò lá lốt</h2>
+                                        <h4>Food</h4>
                                     </div>
                                     <div class="description">
-                                        <p>Có thể nói đây là món ăn ngon nhất ở CanTho</p>
+                                        <p>Món này bán tại Quán Yến Nhi , Bến Ninh Kiều</p>
                                     </div>
                                     <div class="social">
                                         <img src="./images/ShoppingCart.png" alt="">
-                                        <p id="firstp">15.000vnđ</p>
+                                        <p id="firstp">28.000vnđ</p>
                                         <p id="secondp">Add to cart</p>
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="card" id="product_card">
-                                    <div class="bkg"></div>
-                                    <img src="./images/shipper.gif" id="profile" alt="">
-                                    <div class="info">
-                                        <h2>Tra Thai Xo</h2>
-                                        <h4>Thuc an</h4>
-                                    </div>
-                                    <div class="description">
-                                        <p>Có thể nói đây là món ăn ngon nhất ở CanTho</p>
-                                    </div>
-                                    <div class="social">
-                                        <img src="./images/ShoppingCart.png" alt="">
-                                        <p id="firstp">15.000vnđ</p>
-                                        <p id="secondp">Add to cart</p>
-                                    </div>
 
-                                </div>
-                            </div>
                             <div class="col-sm-3">
                                 <div class="card" id="product_card">
                                     <div class="bkg"></div>
-                                    <img src="./images/shipper.gif" id="profile" alt="">
+                                    <img src="./images/category-snack.jpg" id="profile" alt="">
                                     <div class="info">
-                                        <h2>Tra Thai Xo</h2>
-                                        <h4>Thuc an</h4>
+                                        <h2>Bánh Chán Trộn</h2>
+                                        <h4>Snack</h4>
                                     </div>
                                     <div class="description">
-                                        <p>Có thể nói đây là món ăn ngon nhất ở CanTho</p>
-                                    </div>
-                                    <div class="social">
-                                        <img src="./images/ShoppingCart.png" alt="">
-                                        <p id="firstp">15.000vnđ</p>
-                                        <p id="secondp">Add to cart</p>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card" id="product_card">
-                                    <div class="bkg"></div>
-                                    <img src="./images/shipper.gif" id="profile" alt="">
-                                    <div class="info">
-                                        <h2>Tra Thai Xo</h2>
-                                        <h4>Thuc an</h4>
-                                    </div>
-                                    <div class="description">
-                                        <p>Có thể nói đây là món ăn ngon nhất ở CanTho</p>
+                                        <p>Được của ló</p>
                                     </div>
                                     <div class="social">
                                         <img src="./images/ShoppingCart.png" alt="">
@@ -154,21 +116,81 @@
                                 </div>
                             </div>
 
+                            <div class="col-sm-3">
+                                <div class="card" id="product_card">
+                                    <div class="bkg"></div>
+                                    <img src="./images/mini_carousel_4.jpg" id="profile" alt="">
+                                    <div class="info">
+                                        <h2>Khô gà thầy Ba</h2>
+                                        <h4>Food</h4>
+                                    </div>
+                                    <div class="description">
+                                        <p>Ngon hơn người yêu cũ của bạn</p>
+                                    </div>
+                                    <div class="social">
+                                        <img src="./images/ShoppingCart.png" alt="">
+                                        <p id="firstp">35.000vnđ</p>
+                                        <p id="secondp">Add to cart</p>
+                                    </div>
+
+                                </div>
+                            </div>
 
                             <div class="col-sm-3">
                                 <div class="card" id="product_card">
                                     <div class="bkg"></div>
-                                    <img src="./images/shipper.gif" id="profile" alt="">
+                                    <img src="./images/mini_carousel_2.jpg" id="profile" alt="">
                                     <div class="info">
-                                        <h2>Tra Thai Xo</h2>
-                                        <h4>Thuc an</h4>
+                                        <h2>Mì trộn lòng đào</h2>
+                                        <h4>Food</h4>
                                     </div>
                                     <div class="description">
-                                        <p>Có thể nói đây là món ăn ngon nhất ở CanTho</p>
+                                        <p>Đối diện quán cafe 24h Trần Hoàng Na</p>
                                     </div>
                                     <div class="social">
                                         <img src="./images/ShoppingCart.png" alt="">
-                                        <p id="firstp">15.000vnđ</p>
+                                        <p id="firstp">26.000vnđ</p>
+                                        <p id="secondp">Add to cart</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-3">
+                                <div class="card" id="product_card">
+                                    <div class="bkg"></div>
+                                    <img src="./images/mini_carousel_1.jpg" id="profile" alt="">
+                                    <div class="info">
+                                        <h2>Bún đậu Ba Phải</h2>
+                                        <h4>Food</h4>
+                                    </div>
+                                    <div class="description">
+                                        <p>Đi ba bước phải ghé Ba Phải</p>
+                                    </div>
+                                    <div class="social">
+                                        <img src="./images/ShoppingCart.png" alt="">
+                                        <p id="firstp">45.000vnđ</p>
+                                        <p id="secondp">Add to cart</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="card" id="product_card">
+                                    <div class="bkg"></div>
+                                    <img src="./images/mini_carousel_5.png" id="profile" alt="">
+                                    <div class="info">
+                                        <h2>Mực rim me</h2>
+                                        <h4>Food</h4>
+                                    </div>
+                                    <div class="description">
+                                        <p>Hải sản miền núi. Tươi ngon 100%</p>
+                                    </div>
+                                    <div class="social">
+                                        <img src="./images/ShoppingCart.png" alt="">
+                                        <p id="firstp">46.000vnđ</p>
                                         <p id="secondp">Add to cart</p>
                                     </div>
 
@@ -177,50 +199,32 @@
                             <div class="col-sm-3">
                                 <div class="card" id="product_card">
                                     <div class="bkg"></div>
-                                    <img src="./images/shipper.gif" id="profile" alt="">
+                                    <img src="./images/category-drinks.jpg" id="profile" alt="">
                                     <div class="info">
-                                        <h2>Tra Thai Xo</h2>
-                                        <h4>Thuc an</h4>
+                                        <h2>Cà phê sữa</h2>
+                                        <h4>Drinks</h4>
                                     </div>
                                     <div class="description">
-                                        <p>Có thể nói đây là món ăn ngon nhất ở CanTho</p>
+                                        <p>Uống 1 ly = 1 đêm không ngủ</p>
                                     </div>
                                     <div class="social">
                                         <img src="./images/ShoppingCart.png" alt="">
-                                        <p id="firstp">15.000vnđ</p>
+                                        <p id="firstp">18.000vnđ</p>
                                         <p id="secondp">Add to cart</p>
                                     </div>
+                                </div>
+                            </div>
 
-                                </div>
-                            </div>
                             <div class="col-sm-3">
                                 <div class="card" id="product_card">
                                     <div class="bkg"></div>
-                                    <img src="./images/shipper.gif" id="profile" alt="">
+                                    <img src="./images/gai.jpg" id="profile" alt="">
                                     <div class="info">
-                                        <h2>Tra Thai Xo</h2>
-                                        <h4>Thuc an</h4>
+                                        <h2>Gái Cần Thơ</h2>
+                                        <h4>Other</h4>
                                     </div>
                                     <div class="description">
-                                        <p>Có thể nói đây là món ăn ngon nhất ở CanTho</p>
-                                    </div>
-                                    <div class="social">
-                                        <img src="./images/ShoppingCart.png" alt="">
-                                        <p id="firstp">15.000vnđ</p>
-                                        <p id="secondp">Add to cart</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card" id="product_card">
-                                    <div class="bkg"></div>
-                                    <img src="./images/shipper.gif" id="profile" alt="">
-                                    <div class="info">
-                                        <h2>Tra Thai Xo</h2>
-                                        <h4>Thuc an</h4>
-                                    </div>
-                                    <div class="description">
-                                        <p>Có thể nói đây là món ăn ngon nhất ở CanTho</p>
+                                        <p>...</p>
                                     </div>
                                     <div class="social">
                                         <img src="./images/ShoppingCart.png" alt="">

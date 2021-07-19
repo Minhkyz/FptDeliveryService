@@ -21,7 +21,7 @@
                     <i class="fa fa-home" aria-hidden="true"></i>
                 </div>
 
-                <div class="name"><span data-text="Home">User Manage</span></div>
+                <div class="name"><span data-text="User Manage">User Manage</span></div>
             </a>
         </li>
         </c:if>
